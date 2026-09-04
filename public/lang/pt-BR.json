@@ -17,7 +17,7 @@
     },
     "instructions": {
         "no-peers_data-drop-bg": "Solte para selecionar o destinatário",
-        "no-peers-title": "Abra o OWL DROP em outros dispositivos para enviar arquivos",
+        "no-peers-title": "Procurando dispositivos",
         "no-peers-subtitle": "Emparelhe dispositivos ou entre em uma sala pública para ser descoberto em outras redes",
         "x-instructions_desktop": "Clique para enviar arquivos ou clique com o botão direito para enviar uma mensagem",
         "x-instructions_mobile": "Toque para enviar arquivos ou toque e segure para enviar uma mensagem",
