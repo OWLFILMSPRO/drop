@@ -1116,79 +1116,96 @@ See note here: https://developer.mozilla.org/en-US/docs/Web/CSS/user-select */
 }
 
 /* ========================================= */
-/* 🍏 TEMA iOS LIQUID GLASS (VISION OS STYLE) */
+/* 🍏 TEMA iOS LIQUID GLASS (CLEAN VERSION) */
 /* ========================================= */
 
-/* Escurecer menos o fundo para o vidro do pop-up brilhar mais */
+/* 1. FUNDO E JANELA DE VIDRO */
 x-dialog x-background {
     background: rgba(0, 0, 0, 0.4) !important;
 }
-
-/* Fundo transparente e efeito de vidro temperado */
 x-dialog x-paper {
     background: rgba(30, 30, 32, 0.65) !important;
     backdrop-filter: blur(35px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(35px) saturate(180%) !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-radius: 22px !important;
+    border-radius: 32px !important;
     max-width: 310px !important;
     box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2) !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
 }
 
-/* Remover o cabeçalho azul gigantesco */
+/* 2. CABEÇALHO (REDUÇÃO DE ESPAÇO) */
 x-paper > .row:first-of-type {
     background-color: transparent !important;
-    padding-top: 24px !important;
-    padding-bottom: 8px !important;
+    padding-top: 16px !important;
+    padding-bottom: 0px !important;
 }
-
-/* Título principal mais limpo */
+x-dialog x-paper .p-2 {
+    padding: 2px 8px !important; 
+}
 x-paper .dialog-title {
     color: #FFFFFF !important;
-    font-size: 15px !important;
+    font-size: 16px !important;
     font-weight: 600 !important;
     letter-spacing: -0.4px !important;
     text-align: center !important;
+    line-height: 1.1 !important;
 }
 
-/* Textos menores e elegantes (descrição do arquivo) */
+/* 3. ALINHAMENTO DO TEXTO (NOME E TAMANHO NA MESMA LINHA) */
 .file-description {
-    font-size: 12px !important;
-    color: rgba(255, 255, 255, 0.8) !important;
-    padding: 0 10px !important;
+    display: block !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+    margin-top: 6px !important;
 }
-
-/* Nome do arquivo em destaque */
-.file-name {
-    font-size: 12px !important;
-    font-weight: 500 !important;
-    color: #FFF !important;
-    margin-top: 12px !important;
+.file-description > div:first-child {
+    display: block !important;
+    margin-bottom: 4px !important;
 }
-
-/* Pílula do nome do dispositivo (deixar sutil) */
 .file-description .badge {
     background: rgba(255, 255, 255, 0.15) !important;
     color: #FFF !important;
     font-weight: 500 !important;
     border-radius: 8px !important;
     padding: 2px 8px !important;
+    margin-right: 4px !important;
+}
+/* Força elementos a se comportarem como texto corrido na mesma linha */
+.file-description > .file-name,
+.file-description > .file-other,
+.file-description > .file-size {
+    display: inline !important; 
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+}
+.file-description > .file-name {
+    font-weight: 600 !important;
+    color: #FFF !important;
+}
+.file-description > .file-size {
+    font-weight: 400 !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+.file-description > .file-size::before {
+    content: " — ";
+    color: rgba(255, 255, 255, 0.3) !important;
 }
 
-/* Ajustar a prévia da imagem para ficar com cantos arredondados */
+/* 4. IMAGEM DE PRÉVIA GRANDE */
 .file-preview {
-    margin-top: 10px !important;
-    margin-bottom: 20px !important;
+    margin-top: 8px !important;
+    margin-bottom: 16px !important;
 }
 .file-preview > img, .file-preview > video {
+    max-height: 380px !important;
+    max-width: 100% !important;
     border-radius: 12px !important;
-    max-height: 200px !important;
+    object-fit: contain !important;
 }
 
-/* ================== */
-/* BOTÕES ESTILO iOS  */
-/* ================== */
+/* 5. BOTÕES INFERIORES NATIVOS iOS */
 x-paper > .btn-row {
     margin: 0 !important;
     padding: 0 !important;
@@ -1197,208 +1214,50 @@ x-paper > .btn-row {
     background: transparent !important;
     width: 100% !important;
 }
-
 x-paper > .btn-row .btn {
     background: transparent !important;
-    color: #0A84FF !important; /* Azul nativo da Apple */
+    color: #0A84FF !important;
     font-size: 17px !important;
     font-weight: 400 !important;
     box-shadow: none !important;
     margin: 0 !important;
     border-radius: 0 !important;
-    text-transform: none !important; /* Tira tudo maiúsculo */
+    border-left: none !important;
+    text-transform: none !important;
     height: 50px !important;
     letter-spacing: -0.3px !important;
     flex: 1 !important;
 }
-
-/* Efeito ao clicar no botão */
 x-paper > .btn-row .btn:active {
     background: rgba(255, 255, 255, 0.1) !important;
 }
-
-/* Divisória entre os botões */
-x-paper > .btn-row .btn:first-child {
-    font-weight: 600 !important; /* Aceitar em negrito */
-    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
-}
-
-/* Arredondar os cantos inferiores dos botões para não vazar do vidro */
-x-paper > .btn-row .btn:first-child {
-    border-bottom-right-radius: 22px !important;
-}
-x-paper > .btn-row .btn:last-child {
-    border-bottom-left-radius: 22px !important;
-}
-
-
-/* ========================================= */
-/* AJUSTES FINAIS: ESPAÇAMENTO E PRÉVIA GRANDE */
-/* ========================================= */
-
-/* 1. Comprime os espaços em branco no topo */
-x-paper > .row:first-of-type {
-    padding-top: 16px !important;
-    padding-bottom: 0px !important;
-}
-x-dialog x-paper .p-2 {
-    padding: 2px 8px !important; 
-}
-x-paper .dialog-title {
-    line-height: 1.1 !important;
-    font-size: 16px !important;
-}
-
-/* 2. Transforma os textos numa estrutura compacta */
-.file-description {
-    display: block !important;
-    text-align: center !important;
-    line-height: 1.2 !important;
-}
-.file-description > div {
-    display: block !important;
-    margin: 4px 0 !important;
-}
-
-/* 3. Coloca Nome do Arquivo e Tamanho na MESMA LINHA */
-.file-name, .file-other, .file-size {
-    display: inline-block !important;
-    margin: 0 !important;
-    font-size: 12px !important;
-    font-weight: 500 !important;
-    color: #FFF !important;
-}
-/* Estilo sutil para o tamanho do arquivo */
-.file-size {
-    color: rgba(255, 255, 255, 0.6) !important;
-}
-/* Cria o tracinho ( — ) separando o nome e tamanho */
-.file-size::before {
-    content: " — ";
-    margin: 0 4px;
-    color: rgba(255, 255, 255, 0.3);
-}
-
-/* 4. AUMENTA A IMAGEM DRAMATICAMENTE */
-.file-preview {
-    margin-top: 4px !important;
-    margin-bottom: 12px !important;
-}
-.file-preview > img, .file-preview > video {
-    max-height: 380px !important; /* Praticamente dobra o tamanho da imagem */
-    max-width: 100% !important;
-    border-radius: 12px !important;
-    object-fit: contain !important;
-}
-
-
-/* ========================================= */
-/* CORREÇÃO DEFINITIVA: NOME E TAMANHO JUNTOS */
-/* ========================================= */
-.file-description {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-}
-/* Força a frase do topo (Quem enviou) a ocupar uma linha sozinha */
-.file-description > div:first-child {
-    display: block !important;
-    width: 100% !important;
-    margin-bottom: 6px !important;
-}
-/* Força o Nome, Outros arquivos e Tamanho a ficarem lado a lado */
-.file-description > div.file-name,
-.file-description > div.file-other,
-.file-description > div.file-size {
-    display: inline-block !important;
-    width: auto !important;
-    margin: 0 !important;
-    font-size: 13px !important; /* Tamanho exato e igual para todos */
-}
-/* Deixa o nome mais forte (negrito) e branco */
-.file-description > div.file-name {
-    font-weight: 600 !important;
-    color: #FFF !important;
-}
-/* Deixa o tamanho um pouco mais opaco (cinza) */
-.file-description > div.file-size {
-    color: rgba(255, 255, 255, 0.6) !important;
-    font-weight: 400 !important;
-}
-/* Coloca o tracinho separador antes do tamanho */
-.file-description > div.file-size::before {
-    content: " — ";
-    margin: 0 4px;
-    color: rgba(255, 255, 255, 0.3) !important;
-}
-
-/* ========================================= */
-/* AJUSTE PARA 3 BOTÕES E ÍCONE DE COMPARTILHAR */
-/* ========================================= */
-/* Refaz as bordas divisórias para funcionar perfeitamente com 2 ou 3 botões */
-x-paper > .btn-row .btn {
-    border-left: none !important;
-}
+/* Linhas divisórias dos botões */
 x-paper > .btn-row .btn:not(:last-child) {
     border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
-/* Garante o canto arredondado correto, mesmo quando o Compartilhar não aparece (no PC) */
+/* Arredondamento perfeito nos cantos inferiores */
+x-paper > .btn-row .btn:first-child {
+    border-bottom-right-radius: 32px !important;
+}
+x-paper > .btn-row .btn:last-child {
+    border-bottom-left-radius: 32px !important;
+}
 x-paper > .btn-row .btn[hidden] + .btn {
     border-bottom-right-radius: 32px !important;
 }
-/* Transforma o botão COMPARTILHAR no Ícone Nativo do iOS */
-#share-btn:not([hidden]) {
-    font-size: 0 !important; /* Esconde a palavra longa */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex: none !important; /* Impede de esticar igual os outros */
-    width: 64px !important; /* Tamanho fixo pro ícone, liberando espaço */
-}
-/* Desenha o ícone "Share" oficial da Apple */
-#share-btn:not([hidden])::before {
-    content: "";
-    display: block;
-    width: 22px;
-    height: 22px;
-    background-color: #0A84FF !important; /* Azul original do iOS */
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8'/%3E%3Cpolyline points='16 6 12 2 8 6'/%3E%3Cline x1='12' y1='2' x2='12' y2='15'/%3E%3C/svg%3E") no-repeat center;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8'/%3E%3Cpolyline points='16 6 12 2 8 6'/%3E%3Cline x1='12' y1='2' x2='12' y2='15'/%3E%3C/svg%3E") no-repeat center;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-}
-/* O botão de "Baixar" passa a ser a ação principal e fica em negrito */
 #download-btn {
-    font-weight: 600 !important;
+    font-weight: 600 !important; /* Baixar = Ação Principal */
 }
 
-
-/* ========================================= */
-/* CORREÇÃO DEFINITIVA DO ÍCONE COMPARTILHAR */
-/* ========================================= */
-
+/* 6. ÍCONE DE COMPARTILHAR EXATO */
 #share-btn:not([hidden]) {
-    color: transparent !important; /* Esconde a palavra com segurança */
-    font-size: 0 !important; 
-    flex: none !important; 
-    width: 64px !important; 
-    position: relative !important; /* Trava a caixa para o ícone flutuar no centro */
-    padding: 0 !important;
-}
-
-#share-btn:not([hidden])::after {
-    content: "";
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 24px !important;
-    height: 24px !important;
-    background-color: #0A84FF !important;
-    /* Ícone em formato Base64 (Carrega instantaneamente no iOS) */
-    -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik00IDEydjhhMiAyIDAgMCAwIDIgMmgxMmEyIDIgMCAwIDAgMi0ydi04Ii8+PHBvbHlsaW5lIHBvaW50cz0iMTYgNiAxMiAyIDggNiIvPjxsaW5lIHgxPSIxMiIgeTE9IjIiIHgyPSIxMiIgeTI9IjE1Ii8+PC9zdmc+") no-repeat center !important;
-    mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik00IDEydjhhMiAyIDAgMCAwIDIgMmgxMmEyIDIgMCAwIDAgMi0ydi04Ii8+PHBvbHlsaW5lIHBvaW50cz0iMTYgNiAxMiAyIDggNiIvPjxsaW5lIHgxPSIxMiIgeTE9IjIiIHgyPSIxMiIgeTI9IjE1Ii8+PC9zdmc+") no-repeat center !important;
-    -webkit-mask-size: contain !important;
-    mask-size: contain !important;
+    color: transparent !important;
+    font-size: 0 !important;
+    display: block !important;
+    width: 64px !important;
+    flex: none !important;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMEE4NEZGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTQgMTJ2OGEyIDIgMCAwIDAgMiAyaDEyYTIgMiAwIDAgMCAyLTJ2LTgiLz48cG9seWxpbmUgcG9pbnRzPSIxNiA2IDEyIDIgOCA2Ii8+PGxpbmUgeDE9IjEyIiB5MT0iMiIgeDI9IjEyIiB5Mj0iMTUiLz48L3N2Zz4=") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: 24px 24px !important;
 }
