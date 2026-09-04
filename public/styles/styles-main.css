@@ -1230,3 +1230,20 @@ x-paper > .btn-row .btn[hidden] + .btn { border-bottom-right-radius: 32px !impor
     -webkit-mask-size: contain !important;
     mask-size: contain !important;
 }
+
+
+/* ========================================= */
+/* CORREÇÃO DA LOGO NO TEMA CLARO (LIGHT MODE) */
+/* ========================================= */
+
+/* Transforma a logo branca em preta quando o usuário ativa o botão de tema claro */
+body.light-theme img[alt="OWL DROP"] {
+    filter: invert(1) drop-shadow(0 0 10px rgba(0,0,0,0.1)) !important;
+}
+
+/* Transforma a logo em preta quando o celular do usuário já está no modo claro do sistema */
+@media (prefers-color-scheme: light) {
+    body:not(.dark-theme) img[alt="OWL DROP"] {
+        filter: invert(1) drop-shadow(0 0 10px rgba(0,0,0,0.1)) !important;
+    }
+}
