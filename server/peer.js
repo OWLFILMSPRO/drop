@@ -174,7 +174,7 @@ export default class Peer {
             browser: ua.browser.name,
             type: ua.device.type,
             deviceName,
-            displayName
+            displayName: deviceName
         };
     }
 
