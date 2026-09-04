@@ -34,7 +34,7 @@
         "webrtc-requirement": "Para usar essa instância do OWL DROP, o WebRTC deve estar habilitado!"
     },
     "footer": {
-        "known-as": "Você é conhecido como:",
+        "known-as": "Você:",
         "display-name_data-placeholder": "Carregando…",
         "display-name_title": "Edite o nome do seu dispositivo permanentemente",
         "discovery": "Você pode ser descoberto:",
@@ -68,7 +68,7 @@
         "close": "Fechar",
         "join": "Entrar",
         "leave": "Sair",
-        "would-like-to-share": "",
+        "would-like-to-share": "Enviou",
         "accept": "Aceitar",
         "decline": "Recusar",
         "has-sent": "enviou:",
