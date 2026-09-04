@@ -1230,3 +1230,63 @@ x-paper > .btn-row .btn:first-child {
 x-paper > .btn-row .btn:last-child {
     border-bottom-left-radius: 22px !important;
 }
+
+
+/* ========================================= */
+/* AJUSTES FINAIS: ESPAÇAMENTO E PRÉVIA GRANDE */
+/* ========================================= */
+
+/* 1. Comprime os espaços em branco no topo */
+x-paper > .row:first-of-type {
+    padding-top: 16px !important;
+    padding-bottom: 0px !important;
+}
+x-dialog x-paper .p-2 {
+    padding: 2px 8px !important; 
+}
+x-paper .dialog-title {
+    line-height: 1.1 !important;
+    font-size: 16px !important;
+}
+
+/* 2. Transforma os textos numa estrutura compacta */
+.file-description {
+    display: block !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+}
+.file-description > div {
+    display: block !important;
+    margin: 4px 0 !important;
+}
+
+/* 3. Coloca Nome do Arquivo e Tamanho na MESMA LINHA */
+.file-name, .file-other, .file-size {
+    display: inline-block !important;
+    margin: 0 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #FFF !important;
+}
+/* Estilo sutil para o tamanho do arquivo */
+.file-size {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+/* Cria o tracinho ( — ) separando o nome e tamanho */
+.file-size::before {
+    content: " — ";
+    margin: 0 4px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* 4. AUMENTA A IMAGEM DRAMATICAMENTE */
+.file-preview {
+    margin-top: 4px !important;
+    margin-bottom: 12px !important;
+}
+.file-preview > img, .file-preview > video {
+    max-height: 380px !important; /* Praticamente dobra o tamanho da imagem */
+    max-width: 100% !important;
+    border-radius: 12px !important;
+    object-fit: contain !important;
+}
