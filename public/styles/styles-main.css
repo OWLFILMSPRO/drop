@@ -1372,3 +1372,33 @@ x-paper > .btn-row .btn[hidden] + .btn {
 #download-btn {
     font-weight: 600 !important;
 }
+
+
+/* ========================================= */
+/* CORREÇÃO DEFINITIVA DO ÍCONE COMPARTILHAR */
+/* ========================================= */
+
+#share-btn:not([hidden]) {
+    color: transparent !important; /* Esconde a palavra com segurança */
+    font-size: 0 !important; 
+    flex: none !important; 
+    width: 64px !important; 
+    position: relative !important; /* Trava a caixa para o ícone flutuar no centro */
+    padding: 0 !important;
+}
+
+#share-btn:not([hidden])::after {
+    content: "";
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 24px !important;
+    height: 24px !important;
+    background-color: #0A84FF !important;
+    /* Ícone em formato Base64 (Carrega instantaneamente no iOS) */
+    -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik00IDEydjhhMiAyIDAgMCAwIDIgMmgxMmEyIDIgMCAwIDAgMi0ydi04Ii8+PHBvbHlsaW5lIHBvaW50cz0iMTYgNiAxMiAyIDggNiIvPjxsaW5lIHgxPSIxMiIgeTE9IjIiIHgyPSIxMiIgeTI9IjE1Ii8+PC9zdmc+") no-repeat center !important;
+    mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik00IDEydjhhMiAyIDAgMCAwIDIgMmgxMmEyIDIgMCAwIDAgMi0ydi04Ii8+PHBvbHlsaW5lIHBvaW50cz0iMTYgNiAxMiAyIDggNiIvPjxsaW5lIHgxPSIxMiIgeTE9IjIiIHgyPSIxMiIgeTI9IjE1Ii8+PC9zdmc+") no-repeat center !important;
+    -webkit-mask-size: contain !important;
+    mask-size: contain !important;
+}
