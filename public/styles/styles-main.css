@@ -1332,3 +1332,43 @@ x-paper .dialog-title {
     margin: 0 4px;
     color: rgba(255, 255, 255, 0.3) !important;
 }
+
+/* ========================================= */
+/* AJUSTE PARA 3 BOTÕES E ÍCONE DE COMPARTILHAR */
+/* ========================================= */
+/* Refaz as bordas divisórias para funcionar perfeitamente com 2 ou 3 botões */
+x-paper > .btn-row .btn {
+    border-left: none !important;
+}
+x-paper > .btn-row .btn:not(:last-child) {
+    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+/* Garante o canto arredondado correto, mesmo quando o Compartilhar não aparece (no PC) */
+x-paper > .btn-row .btn[hidden] + .btn {
+    border-bottom-right-radius: 32px !important;
+}
+/* Transforma o botão COMPARTILHAR no Ícone Nativo do iOS */
+#share-btn:not([hidden]) {
+    font-size: 0 !important; /* Esconde a palavra longa */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex: none !important; /* Impede de esticar igual os outros */
+    width: 64px !important; /* Tamanho fixo pro ícone, liberando espaço */
+}
+/* Desenha o ícone "Share" oficial da Apple */
+#share-btn:not([hidden])::before {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-color: #0A84FF !important; /* Azul original do iOS */
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8'/%3E%3Cpolyline points='16 6 12 2 8 6'/%3E%3Cline x1='12' y1='2' x2='12' y2='15'/%3E%3C/svg%3E") no-repeat center;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8'/%3E%3Cpolyline points='16 6 12 2 8 6'/%3E%3Cline x1='12' y1='2' x2='12' y2='15'/%3E%3C/svg%3E") no-repeat center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+/* O botão de "Baixar" passa a ser a ação principal e fica em negrito */
+#download-btn {
+    font-weight: 600 !important;
+}
