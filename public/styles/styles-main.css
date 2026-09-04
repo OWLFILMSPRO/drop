@@ -1115,3 +1115,118 @@ See note here: https://developer.mozilla.org/en-US/docs/Web/CSS/user-select */
     user-select: text;
 }
 
+/* ========================================= */
+/* 🍏 TEMA iOS LIQUID GLASS (VISION OS STYLE) */
+/* ========================================= */
+
+/* Escurecer menos o fundo para o vidro do pop-up brilhar mais */
+x-dialog x-background {
+    background: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Fundo transparente e efeito de vidro temperado */
+x-dialog x-paper {
+    background: rgba(30, 30, 32, 0.65) !important;
+    backdrop-filter: blur(35px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(35px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 32px !important;
+    max-width: 310px !important;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2) !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Remover o cabeçalho azul gigantesco */
+x-paper > .row:first-of-type {
+    background-color: transparent !important;
+    padding-top: 24px !important;
+    padding-bottom: 8px !important;
+}
+
+/* Título principal mais limpo */
+x-paper .dialog-title {
+    color: #FFFFFF !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.4px !important;
+    text-align: center !important;
+}
+
+/* Textos menores e elegantes (descrição do arquivo) */
+.file-description {
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    padding: 0 10px !important;
+}
+
+/* Nome do arquivo em destaque */
+.file-name {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #FFF !important;
+    margin-top: 12px !important;
+}
+
+/* Pílula do nome do dispositivo (deixar sutil) */
+.file-description .badge {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #FFF !important;
+    font-weight: 500 !important;
+    border-radius: 8px !important;
+    padding: 2px 8px !important;
+}
+
+/* Ajustar a prévia da imagem para ficar com cantos arredondados */
+.file-preview {
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+}
+.file-preview > img, .file-preview > video {
+    border-radius: 12px !important;
+    max-height: 200px !important;
+}
+
+/* ================== */
+/* BOTÕES ESTILO iOS  */
+/* ================== */
+x-paper > .btn-row {
+    margin: 0 !important;
+    padding: 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    flex-wrap: nowrap !important;
+    background: transparent !important;
+    width: 100% !important;
+}
+
+x-paper > .btn-row .btn {
+    background: transparent !important;
+    color: #0A84FF !important; /* Azul nativo da Apple */
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    text-transform: none !important; /* Tira tudo maiúsculo */
+    height: 50px !important;
+    letter-spacing: -0.3px !important;
+    flex: 1 !important;
+}
+
+/* Efeito ao clicar no botão */
+x-paper > .btn-row .btn:active {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Divisória entre os botões */
+x-paper > .btn-row .btn:first-child {
+    font-weight: 600 !important; /* Aceitar em negrito */
+    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Arredondar os cantos inferiores dos botões para não vazar do vidro */
+x-paper > .btn-row .btn:first-child {
+    border-bottom-right-radius: 32px !important;
+}
+x-paper > .btn-row .btn:last-child {
+    border-bottom-left-radius: 32px !important;
+}
