@@ -1247,3 +1247,98 @@ body.light-theme img[alt="OWL DROP"] {
         filter: invert(1) drop-shadow(0 0 10px rgba(0,0,0,0.1)) !important;
     }
 }
+/* ========================================= */
+/* 7. REDESIGN: JANELAS DE PAREAMENTO / SALAS */
+/* ========================================= */
+
+/* QR Code com estilo Apple Wallet (Bordas arredondadas e respiro) */
+.key-qr-code {
+    background: #FFFFFF !important;
+    padding: 12px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+    margin-bottom: 12px !important;
+}
+.key-qr-code canvas {
+    border-radius: 4px !important;
+    display: block !important;
+}
+
+/* Letras e Números da Senha (Maior, espaçado e elegante) */
+h1.key {
+    font-size: 34px !important;
+    font-weight: 500 !important;
+    letter-spacing: 14px !important;
+    color: #FFFFFF !important;
+    margin: 8px 0 16px 0 !important;
+    margin-right: -14px !important; /* Compensa o letter-spacing para o texto ficar 100% no centro geométrico */
+}
+
+/* Textos de Instrução mais sutis */
+.key-instructions {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+}
+
+/* Divisória "OU" modernizada */
+.hr-note hr {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+.hr-note div {
+    background: transparent !important;
+}
+.hr-note span {
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 0 12px !important;
+    text-transform: uppercase !important;
+}
+
+/* Caixas de Texto (Estilo PIN Code do iOS) */
+.input-key-container {
+    gap: 8px !important;
+    justify-content: center !important;
+    margin-bottom: 16px !important;
+    display: flex !important;
+}
+.input-key-container .textarea {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 10px !important;
+    color: #FFFFFF !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    width: 44px !important;
+    height: 50px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+}
+.input-key-container .textarea:focus {
+    border-color: #0A84FF !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* === CORREÇÃO DOS BOTÕES NA BASE DA JANELA === */
+/* Desmancha o agrupamento interno para que 2 ou 3 botões dividam o espaço de forma idêntica */
+x-paper > .btn-row > div.row-reverse {
+    display: contents !important; 
+}
+
+/* Aplica a borda divisória em todos e recalcula cantos arredondados com perfeição */
+x-paper > .btn-row .btn {
+    border-radius: 0 !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+x-paper > .btn-row > .btn:last-child {
+    border-left: none !important;
+    border-bottom-left-radius: 32px !important;
+}
+x-paper > .btn-row > .btn:first-child,
+x-paper > .btn-row > div.row-reverse > .btn:first-child {
+    border-bottom-right-radius: 32px !important;
+}
