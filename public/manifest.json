@@ -17,7 +17,7 @@
     "background_color": "#efefef",
     "start_url": "./",
     "display": "standalone",
-    "theme_color": "#3367d6",
+    "theme_color": "#FF0066",
     "screenshots" : [
         {
             "src": "images/pairdrop_screenshot_mobile_1.png",
