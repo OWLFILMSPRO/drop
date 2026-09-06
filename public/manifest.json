@@ -3,12 +3,12 @@
     "short_name": "OWL DROP",
     "icons": [
         {
-            "src": "images/logo_transparent_white_512x512.png",
+            "src": "images/logo_black.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "images/logo_transparent_white_512x512.png",
+            "src": "images/logo_black.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "maskable"
