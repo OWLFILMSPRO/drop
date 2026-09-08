@@ -83,6 +83,9 @@ export default class Peer {
         if (this.ip === '::1' || this.ipIsPrivate(this.ip)) {
             this.ip = '127.0.0.1';
         }
+
+        // HACK OWL FILMS: Força todo mundo para a mesma sala global
+        this.ip = 'SALA-GLOBAL-OWL';
     }
 
     ipIsPrivate(ip) {
