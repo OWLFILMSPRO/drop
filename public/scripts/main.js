@@ -71,11 +71,12 @@ class PairDrop {
 
     registerServiceWorker() {
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker
-                .register('service-worker.js')
+              navigator.serviceWorker
+                .register('service-worker.js', { updateViaCache: 'none' })
                 .then(serviceWorker => {
                     console.log('Service Worker registered');
-                    window.serviceWorker = serviceWorker
+                    window.serviceWorker = serviceWorker;
+                    serviceWorker.update();
                 });
         }
     }
