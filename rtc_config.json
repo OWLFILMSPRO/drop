@@ -1,20 +1,15 @@
 [
+  {"urls": "stun:stun.l.google.com:19302"},
+  {"urls": "stun:stun1.l.google.com:19302"},
+  {"urls": "stun:stun2.l.google.com:19302"},
   {
-    "urls": "stun:stun.l.google.com:19302"
+    "urls": "turn:relay1.expressturn.com:3478",
+    "username": "efSEVVP1LHRB3R5S11",
+    "credential": "6ZdO7FVGBZLG5KVB"
   },
   {
-    "urls": "turn:openrelay.metered.ca:80",
-    "username": "openrelayproject",
-    "credential": "openrelayproject"
-  },
-  {
-    "urls": "turn:openrelay.metered.ca:443",
-    "username": "openrelayproject",
-    "credential": "openrelayproject"
-  },
-  {
-    "urls": "turns:openrelay.metered.ca:443",
-    "username": "openrelayproject",
-    "credential": "openrelayproject"
+    "urls": "turns:relay1.expressturn.com:443",
+    "username": "efSEVVP1LHRB3R5S11",
+    "credential": "6ZdO7FVGBZLG5KVB"
   }
 ]
